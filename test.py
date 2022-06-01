@@ -3,7 +3,6 @@ class color:
     
 import speedtest
 from colorama import init
-init(autoreset=True)
 
 test = speedtest.Speedtest()
 down = test.download()
