@@ -3,4 +3,6 @@ Speed test made in python
 
 # how to start
 
-start test.py
+- install [Python](https://python.org/download)
+
+- start test.py
