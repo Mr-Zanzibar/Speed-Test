@@ -2,7 +2,7 @@ class color:
    CYAN = '\033[96m'
     
 import speedtest
-from colorama import init
+import colorama
 
 test = speedtest.Speedtest()
 down = test.download()
