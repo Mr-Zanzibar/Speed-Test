@@ -5,4 +5,6 @@ Speed test made in python
 
 - install [Python](https://python.org/download)
 
+- click on install.bat
+
 - click on test.bat
