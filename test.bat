@@ -1,4 +1,4 @@
 @echo off
-TITLE SpeedTest by Mr-Cuda
+TITLE SpeedTest
 python test.py
 pause
