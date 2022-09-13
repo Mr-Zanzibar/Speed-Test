@@ -4,6 +4,8 @@ class color:
 import speedtest
 import colorama
 
+colorama.init() # forgot this lol
+
 test = speedtest.Speedtest()
 down = test.download()
 up = test.upload()
