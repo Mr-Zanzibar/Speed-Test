@@ -1,20 +1,28 @@
-class color:
-   CYAN = '\033[96m'
-    
 import speedtest
 import colorama
+from colorama import Fore
 
-colorama.init() # forgot this lol
+colorama.init()
+
+print(Fore.CYAN)
 
 test = speedtest.Speedtest()
-down = test.download()
-up = test.upload()
 
-down = (down/1024)/1024
-up = (up/1024)/1024
+print("Loading server list...")
+test.get_servers()
+print("Choosing best server...")
+best = test.get_best_server()
 
-print(f' ')
-print(color.CYAN + f'Speed test')
-print(color.CYAN + f'Download speed: {round(down, 2)} Mbps')
-print(color.CYAN + f'Upload speed: {round(up, 2)} Mbps')
-print(f' ')
+print(f"Found: {best['host']} located in {best['country']}")
+
+print("Performing download test...")
+download_result = test.download()
+print("Performing upload test...")
+upload_result = test.upload()
+ping_result = test.results.ping
+
+print(f"Download speed: {download_result / 1024 / 1024:.2f}Mbit/s")
+print(f"Upload speed: {upload_result / 1024 / 1024:.2f}Mbit/s")
+print(f"Ping: {ping_result}ms")
+
+# Big change no?
